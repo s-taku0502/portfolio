@@ -1,5 +1,6 @@
-import Link from "next/link";
-import "../styles/globals.css"
+// import Link from "next/Link";
+import "../styles/globals.css";
+import CustomLink from "../components/CustomLink";
 
 export default function Home() {
   return (
@@ -7,31 +8,31 @@ export default function Home() {
       <div className="background-shape shape-top-right" />
       <div className="background-shape shape-bottom-left" />
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-          <h1 className="text-8xl ts-2xl">sudo</h1>
-          <div className="min-h-screen p-8">
+        <main className="font-playfair flex flex-col gap-8 row-start-2 items-center sm:items-start">
+          <h1 className="text-6xl ts-2xl">Sudo`s portfolio</h1>
+          <div className="max-h-screen p-8">
             <h1 className="text-4xl mb-8 bg-blue-100 rounded-md">
               Welcome to My Portfolio
             </h1>
             <nav className="flex space-x-4">
-              <Link href="/about" className="text-blue-600 ts:bold hover:underline">
+              <CustomLink href="/about">
                 自己紹介ページへ
-              </Link>
-              <Link href="/projects" className="text-blue-600 hover:underline">
+              </CustomLink>
+              <CustomLink href="/projects">
                 制作物一覧へ
-              </Link>
-              <Link href="/contact" className="text-blue-600 hover:underline">
+              </CustomLink>
+              <CustomLink href="/contact">
                 お問い合わせページへ
-              </Link>
+              </CustomLink>
             </nav>
           </div>
         </main>
-        <footer className="flex flex-col gap-4 row-start-3 items-center">
-          <a className="text-center">©2025 sudo</a>
+        <footer className="font-playfair flex flex-col gap-4 row-start-3 items-center">
+          <a className="text-center text-xl">©2025 sudo</a>
           <div className="flex space-x-4">
-            <Link href="/privacy" className="text-blue-600 hover:underline">
+            <CustomLink href="/privacy" >
               プライバシーポリシー
-            </Link>
+            </CustomLink>
             <a
               href="https://x.com/ocean_t_umi"
               className="text-blue-600 hover:underline"
