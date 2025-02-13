@@ -17,7 +17,7 @@ export default function Home() {
             <h1 className="font-playfair text-[3vw] text-2xl mb-2 rounded-md">
               Welcome to My Portfolio
             </h1>
-            <nav className="flex space-x-4 text-[2vw] justify-center">
+            <nav className="flex space-x-4 text-base md:text-[2vw] justify-center">
               <CustomLink href="/about">自己紹介ページへ</CustomLink>
               <CustomLink href="/projects">制作物一覧へ</CustomLink>
               <CustomLink href="/contact">お問い合わせページへ</CustomLink>
