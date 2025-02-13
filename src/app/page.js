@@ -1,7 +1,7 @@
 // import Link from "next/Link";
 import "../styles/globals.css";
 import CustomLink from "../components/CustomLink";
-import CustomH1 from "../components/CustomH1";
+import CustomH2 from "../components/CustomH2";
 
 export default function Home() {
   return (
@@ -10,11 +10,11 @@ export default function Home() {
       <div className="background-shape shape-bottom-left" />
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
         <main className="font-playfair flex flex-col gap-8 row-start-2 items-center sm:items-start">
-          <CustomH1>Sudo`s portfolio</CustomH1>
+          <CustomH2>Sudo`s portfolio</CustomH2>
           <div className="max-h-screen p-8">
-            <CustomH1>
+            <CustomH2>
               Welcome to My Portfolio
-            </CustomH1>
+            </CustomH2>
             <nav className="flex space-x-4">
               <CustomLink href="/about">
                 自己紹介ページへ
