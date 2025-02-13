@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
         <>
             <div className="">
                 <Privacy_div className="text-center">
-                    <CustomH2>プライバシーポリシー</CustomH2>
+                    <h1 className="text-4xl">プライバシーポリシー</h1>
                     <p>　当サイトでは、お問い合わせフォームを通じて収集する情報は、以下の通りです。</p>
                 </Privacy_div>
 
