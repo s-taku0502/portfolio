@@ -4,8 +4,7 @@ const CustomFooter = ({ children, className = "" }) => {
     return (
         <footer className="font-playfair flex text-base md:text-[2vw] flex-col gap-4 row-start-3 items-center">
             <div className="flex space-x-4">
-                <a className="font-playfair text-base md:text-[2vw] text-center text-xl">©2025 </a>
-                <a className="text-center text-base sd:text-[2vw] text-xl">sudo</a>
+                <a className="font-playfair text-base md:text-[2vw] text-center">©2025 sudo</a>
             </div>
             <div className="flex space-x-4">
                 <CustomLink href="/privacy" >
