@@ -1,7 +1,7 @@
 // import Link from "next/Link";
 import "../styles/globals.css";
-import CustomLink from "../components/CustomLink";
-import CustomH2 from "../components/CustomH2";
+import CustomLink from "@/components/CustomLink";
+import CustomFooter from "@/components/CustomFooter";
 
 export default function Home() {
   return (
@@ -9,39 +9,22 @@ export default function Home() {
       <div className="background-shape shape-top-right" />
       <div className="background-shape shape-bottom-left" />
       <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        <main className="font-playfair flex flex-col gap-8 row-start-2 items-center sm:items-start">
-          <CustomH2>Sudo`s portfolio</CustomH2>
-          <div className="max-h-screen p-8">
-            <CustomH2>
+        <main className="font-playfair flex flex-col gap-8 row-start-2 items-center text-center">
+          <h1 className="font-playfair text-5xl mb-2 rounded-md w-full">
+            Sudo`s portfolio
+          </h1>
+          <div className="max-h-screen p-8 w-full">
+            <h1 className="font-playfair text-2xl mb-2 rounded-md">
               Welcome to My Portfolio
-            </CustomH2>
-            <nav className="flex space-x-4">
-              <CustomLink href="/about">
-                自己紹介ページへ
-              </CustomLink>
-              <CustomLink href="/projects">
-                制作物一覧へ
-              </CustomLink>
-              <CustomLink href="/contact">
-                お問い合わせページへ
-              </CustomLink>
+            </h1>
+            <nav className="flex space-x-4 justify-center">
+              <CustomLink href="/about">自己紹介ページへ</CustomLink>
+              <CustomLink href="/projects">制作物一覧へ</CustomLink>
+              <CustomLink href="/contact">お問い合わせページへ</CustomLink>
             </nav>
           </div>
         </main>
-        <footer className="font-playfair flex flex-col gap-4 row-start-3 items-center">
-          <a className="text-center text-xl">©2025 sudo</a>
-          <div className="flex space-x-4">
-            <CustomLink href="/privacy" >
-              プライバシーポリシー
-            </CustomLink>
-            <a
-              href="https://x.com/ocean_t_umi"
-              className="text-blue-600 hover:underline"
-            >
-              X（旧Twitter）
-            </a>
-          </div>
-        </footer>
+        <CustomFooter />
       </div>
     </>
   );
