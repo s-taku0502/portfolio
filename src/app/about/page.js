@@ -15,7 +15,7 @@ const aboutData = {
   },
   socialMedia: [
     { platform: "Twitter", link: "https://twitter.com" },
-    { platform: "LinkedIn", link: "https://www.linkedin.com" }
+    // { platform: "LinkedIn", link: "https://www.linkedin.com" }
   ]
 };
 
