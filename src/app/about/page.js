@@ -7,7 +7,7 @@ const aboutData = {
   affiliation: "Kanazawa Institute of Technology",
   location: "Kanazawa, Japan",
   motto: "Embrace challenges and grow through learning.",
-  hobbies: ["Programming", "Playing the guitar", "Traveling", "Reading books"],
+  hobbies: ["Traveling"],
   technicalSkills: ["JavaScript", "Ruby", "Next.js", "Tailwind CSS", "Firebase"],
   projects: {
     description: "Check out my GitHub for some of my projects.",
@@ -30,26 +30,31 @@ export default function AboutPage() {
         <div>
           <CustomH2>Name</CustomH2>
           <p className="text-lg">{aboutData.name}</p>
+          <br />
         </div>
 
         <div>
           <CustomH2>Affiliation</CustomH2>
           <p className="text-lg">{aboutData.affiliation}</p>
+          <br />
         </div>
 
         <div>
           <CustomH2>Location</CustomH2>
           <p className="text-lg">{aboutData.location}</p>
+          <br />
         </div>
 
         <div>
           <CustomH2>Motto</CustomH2>
           <p className="text-lg">"{aboutData.motto}"</p>
+          <br />
         </div>
 
         <div>
           <CustomH2>Hobbies</CustomH2>
           <p className="text-lg">{aboutData.hobbies.join(", ")}</p>
+          <br />
         </div>
 
         <div>
@@ -59,6 +64,7 @@ export default function AboutPage() {
               <li key={index}>{skill}</li>
             ))}
           </ul>
+          <br />
         </div>
 
         <div>
@@ -69,6 +75,7 @@ export default function AboutPage() {
               GitHub
             </a>
           </p>
+          <br />
         </div>
 
         <div>
