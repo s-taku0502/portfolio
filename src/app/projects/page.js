@@ -23,7 +23,7 @@ const projects = [
     description: "Personal portfolio showcasing my work.",
     link: "#",
     status: "In Progress",
-    imageUrl: "#",
+    imageUrl: "/images/portfolio.png",
   },
 ];
 
@@ -42,18 +42,17 @@ export default function ProjectsPage() {
               )}
               <h2 className="text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h2>
               <p className="text-gray-700 dark:text-gray-300">{project.description}</p>
-
               {project.link !== "#" && (
                 <a
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition"
+                  className={`mt-4 inline-block px-4 py-2 text-white rounded transition ${project.status === "公開中" ? "bg-blue-500 hover:bg-blue-600" : "bg-gray-500 cursor-not-allowed"
+                    }`}
                 >
                   View Project
                 </a>
               )}
-
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">公開状況：{project.status}</p>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">制作開始日：{project.start}</p>
               {project.update && <p className="text-sm text-gray-600 dark:text-gray-400">更新日：{project.update}</p>}
