@@ -43,7 +43,7 @@ export default function ProjectsPage() {
       <main className="p-6">
         <div className="background-shape shape-top-right" />
         <div className="background-shape shape-bottom-left" />
-        <h1 className="text-3xl font-bold mb-6 text-center">Projects</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center">成果物一覧</h1>
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <div
