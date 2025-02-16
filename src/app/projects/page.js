@@ -1,6 +1,12 @@
 import CustomFooter from "@/components/CustomFooter";
 import "../../styles/globals.css";
 
+/*
+"/": "status=[公開中, 公開停止中, 制作中]のいずれかを指定します。公開中の場合はリンクが有効になります。",
+"start": "制作開始日を指定します。公開中の場合は表示されません。",
+"update": "更新日を指定します。制作中の場合は表示されません。",
+"imageUrl": "画像のURLを指定します。画像がない場合は表示されません。",
+*/
 const projects = [
   {
     title: "スタンプラリー（ウェブアプリ）/一般利用者用",
@@ -13,7 +19,7 @@ const projects = [
   },
   {
     title: "スタンプラリー（ウェブアプリ）/管理者用",
-    description: "金沢市額（ぬか）振興会の方との提携により制作。",
+    description: "金沢市額（ぬか）振興会の方との提携により制作したスタンプラリーです。但し、管理者専用画面のため、一般利用者はアクセスできません。",
     link: "https://knzwnk-auth.web.app/",
     status: "公開停止中",
     start: "2025/01/20",
@@ -22,9 +28,9 @@ const projects = [
   },
   {
     title: "Portfolio Website",
-    description: "Personal portfolio showcasing my work.",
+    description: "大学生活での制作物をまとめたポートフォリオサイトです。",
     link: "#",
-    status: "In Progress",
+    status: "制作中",
     start: "2025/02/14",
     update: "#",
     imageUrl: "/images/portfolio.png",
