@@ -1,23 +1,73 @@
-import CustomH2 from "@/components/CustomH2";
-import "../../styles/globals.css";
+"use client";
+
+import { useState } from "react";
 import CustomFooter from "@/components/CustomFooter";
+import "../../styles/globals.css";
 
 const aboutData = {
-  name: "Sudo Takumi",
-  affiliation: "Kanazawa Institute of Technology",
-  location: "Kanazawa, Japan",
-  motto: "Embrace challenges and grow through learning.",
-  hobbies: ["Traveling"],
-  technicalSkills: ["JavaScript", "Ruby", "Next.js", "Tailwind CSS", "Firebase"],
+  name: "須藤 拓海 / Sudo Takumi",
+  affiliation: "金沢工業大学 / Kanazawa Institute of Technology",
+  location: "石川県, 日本 / Ishikawa, Japan",
+  motto: "learning by doing: 実践で学ぶ",
+  hobbies: ["旅行 / Traveling"],
+  technicalSkills: {
+    フロントエンド: ["HTML", "CSS", "JavaScript", "Vue.js", "Next.js", "Tailwind CSS"],
+    バックエンド: ["Python", "Java", "Ruby", "Ruby on Rails", "Firebase"],
+    インフラ: ["Docker", "Vercel", "Cloudflare", "GitHub Pages"],
+  },
   projects: {
     description: "Check out my GitHub for some of my projects.",
-    link: "https://github.com"
+    link: "https://github.com/s-taku0502/"
   },
   socialMedia: [
-    { platform: "Twitter", link: "https://twitter.com" },
-    // { platform: "LinkedIn", link: "https://www.linkedin.com" }
+    { platform: "Twitter", link: "https://twitter.com/ocean_t_umi/" },
+  ],
+  extracurricular: [
+    { name: "CirKitプロジェクト / 株式会社CirKit", link: "https://cirkit.jp/" },
+    { name: "情報セキュリティ・スキルアップ・プロジェクト", link: "https://www2.kanazawa-it.ac.jp/kitsec/" }
+  ],
+  workExperience: [
+    {
+      company: "CirKitプロジェクト / 株式会社CirKit",
+      details: [
+        { period: "2024年5月 - 2024年10月", position: "研修生" },
+        { period: "2024年11月 - 現在", position: "学内アンケートウェブアプリ「SAKITO」チーム" },
+        // { period: "2025年度", position: "新人採用（エンジニア職担当）" },
+        // { period: "2025年度", position: "エンジニア研修 メンターリーダー" }
+      ]
+    },
+    {
+      company: "情報セキュリティ・スキルアップ・プロジェクト",
+      details: [
+        { period: "2024年4月 - 現在", position: "メンバー" }
+      ]
+    }
   ]
 };
+
+function ToggleSection({ title, children, defaultOpen = false }) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
+
+  return (
+    <div className="mb-4 border-b border-gray-300 dark:border-gray-600">
+      <button
+        className="text-lg font-semibold w-full text-left p-3 bg-gray-200 dark:bg-gray-700 dark:text-white rounded hover:bg-gray-300 dark:hover:bg-gray-600 flex justify-between items-center"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {title}
+        <span className="transition-transform duration-200">
+          {isOpen ? "▼" : "▶"}
+        </span>
+      </button>
+      <div
+        className={`transition-all duration-300 overflow-hidden ${isOpen ? "max-h-screen opacity-100 p-3" : "max-h-0 opacity-0"
+          }`}
+      >
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export default function AboutPage() {
   return (
@@ -27,71 +77,74 @@ export default function AboutPage() {
       <main className="p-6">
         <h1 className="text-3xl font-bold mb-4">自己紹介ページへようこそ</h1>
 
-        <div>
-          <CustomH2>Name</CustomH2>
-          <p className="text-lg">{aboutData.name}</p>
-          <br />
-        </div>
+        {/* 基本情報 */}
+        <ToggleSection title="基本情報" defaultOpen>
+          <p><strong>名前:</strong> {aboutData.name}</p>
+          <p><strong>所属:</strong> {aboutData.affiliation}</p>
+          <p><strong>所在地:</strong> {aboutData.location}</p>
+        </ToggleSection>
 
-        <div>
-          <CustomH2>Affiliation</CustomH2>
-          <p className="text-lg">{aboutData.affiliation}</p>
-          <br />
-        </div>
+        {/* モットー・趣味 */}
+        <ToggleSection title="モットー・趣味">
+          <p><strong>モットー:</strong> "{aboutData.motto}"</p>
+          <p><strong>趣味:</strong> {aboutData.hobbies.join(", ")}</p>
+        </ToggleSection>
 
-        <div>
-          <CustomH2>Location</CustomH2>
-          <p className="text-lg">{aboutData.location}</p>
-          <br />
-        </div>
+        {/* 使用技術 */}
+        <ToggleSection title="使用技術">
+          {Object.entries(aboutData.technicalSkills).map(([category, skills]) => (
+            <div key={category} className="mt-2">
+              <h3 className="font-semibold">{category.charAt(0).toUpperCase() + category.slice(1)}</h3>
+              <ul className="list-disc pl-6">
+                {skills.map((skill, index) => (
+                  <li key={index}>{skill}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </ToggleSection>
 
-        <div>
-          <CustomH2>Motto</CustomH2>
-          <p className="text-lg">"{aboutData.motto}"</p>
-          <br />
-        </div>
-
-        <div>
-          <CustomH2>Hobbies</CustomH2>
-          <p className="text-lg">{aboutData.hobbies.join(", ")}</p>
-          <br />
-        </div>
-
-        <div>
-          <CustomH2>Technical Skills</CustomH2>
+        {/* 課外活動・職歴 */}
+        <ToggleSection title="課外活動・職歴">
+          <p><strong>課外活動:</strong> </p>
           <ul className="list-disc pl-6">
-            {aboutData.technicalSkills.map((skill, index) => (
-              <li key={index}>{skill}</li>
+            {aboutData.extracurricular.map((activity, index) => (
+              <li key={index}>
+                <a href={activity.link} className="text-blue-600 dark:text-blue-400">{activity.name}</a>
+              </li>
             ))}
           </ul>
-          <br />
-        </div>
-
-        <div>
-          <CustomH2>Projects</CustomH2>
-          <p className="text-lg">
-            {aboutData.projects.description}{" "}
-            <a href={aboutData.projects.link} className="text-blue-600">
-              GitHub
-            </a>
-          </p>
-          <br />
-        </div>
-
-        <div>
-          <CustomH2>Social Media</CustomH2>
-          <p className="text-lg">
-            {aboutData.socialMedia.map((social, index) => (
-              <span key={index}>
-                <a href={social.link} className="text-blue-600">
-                  {social.platform}
-                </a>
-                {index < aboutData.socialMedia.length - 1 && " and "}
-              </span>
+          <p><strong>職歴:</strong></p>
+          <ul className="list-disc pl-6">
+            {aboutData.workExperience.map((work, index) => (
+              <li key={index}>
+                <strong>{work.company}</strong>
+                <ul className="list-disc pl-6">
+                  {work.details.map((detail, subIndex) => (
+                    <li key={subIndex}>{detail.period}: {detail.position}</li>
+                  ))}
+                </ul>
+              </li>
             ))}
-          </p>
-        </div>
+          </ul>
+        </ToggleSection>
+
+        {/* 制作品 */}
+        <ToggleSection title="制作品">
+          <p>{aboutData.projects.description} <a href={aboutData.projects.link} className="text-blue-600 dark:text-blue-400">GitHub</a></p>
+        </ToggleSection>
+
+        {/* ソーシャルメディア */}
+        <ToggleSection title="ソーシャルメディア">
+          {aboutData.socialMedia.map((social, index) => (
+            <p key={index}>
+              <a href={social.link} className="text-blue-600 dark:text-blue-400">{social.platform}</a>
+            </p>
+          ))}
+        </ToggleSection>
       </main>
+
+      {/* フッター */}
       <CustomFooter className="item-align-bottom" />
     </>
   );
