@@ -1,5 +1,6 @@
 import CustomFooter from "@/components/CustomFooter";
 import "../../styles/globals.css";
+import Header from "@/components/Header";
 
 /*
 "/": "status=[公開中, 限定公開中, 公開停止中, 制作中]のいずれかを指定します。公開中の場合はリンクが有効になります。",
@@ -40,10 +41,11 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <>
-      <main className="p-6">
+      <Header className="pb-6" />  {/* Increased padding for the header */}
+      <main className="pt-20 p-6"> {/* Increased padding-top for better spacing */}
         <div className="background-shape shape-top-right" />
         <div className="background-shape shape-bottom-left" />
-        <h1 className="text-3xl font-bold mb-6 text-center">成果物一覧</h1>
+        <h1 className="text-3xl font-bold mb-8 text-center">成果物一覧</h1> {/* Increased margin-bottom */}
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <div

@@ -1,12 +1,13 @@
 import "../../styles/globals.css";
-import Header from "@/components/Header";
 import CustomH2 from "@/components/CustomH2";
 import Privacy_div from "@/components/Privacy";
+import CustomFooter from "@/components/CustomFooter";
 
 const PrivacyPolicy = () => {
     return (
         <>
-            <Header />
+            <div className="background-shape shape-top-right" />
+            <div className="background-shape shape-bottom-left" />
             <div className="px-6 py-8 max-w-3xl mx-auto">
                 <Privacy_div className="text-center mb-8">
                     <h1 className="text-4xl font-bold">プライバシーポリシー</h1>
@@ -43,6 +44,7 @@ const PrivacyPolicy = () => {
                     <p className="text-lg">収集した情報は、適切な方法で管理し、不正アクセスや漏洩を防止するための対策を講じています。</p>
                 </Privacy_div>
             </div>
+            <CustomFooter />
         </>
     );
 };

@@ -1,6 +1,13 @@
+import Header from "@/components/Header";
+import "../../styles/globals.css";
+
 export default function ContactPage() {
-    return (
+  return (
+    <>
+      <Header />
       <main className="p-6">
+        <div className="background-shape shape-top-right" />
+        <div className="background-shape shape-bottom-left" />
         <h1 className="text-3xl font-bold mb-4">Contact Me</h1>
         <form className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
           <div className="mb-4">
@@ -47,6 +54,6 @@ export default function ContactPage() {
           </button>
         </form>
       </main>
-    );
-  }
-  
+    </>
+  );
+}

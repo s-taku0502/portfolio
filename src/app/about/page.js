@@ -1,8 +1,10 @@
 "use client";
 
+import Header from "@/components/Header";
 import { useState } from "react";
 import CustomFooter from "@/components/CustomFooter";
 import "../../styles/globals.css";
+import Head from "next/head";
 
 const aboutData = {
   name: "須藤 拓海 / Sudo Takumi",
@@ -72,9 +74,10 @@ function ToggleSection({ title, children, defaultOpen = false }) {
 export default function AboutPage() {
   return (
     <>
+    <Header className="pb-6"/>
       <div className="background-shape shape-top-right" />
       <div className="background-shape shape-bottom-left" />
-      <main className="p-6">
+      <main className="pt-20 p-6">
         <h1 className="text-3xl font-bold mb-4">自己紹介ページへようこそ</h1>
 
         {/* 基本情報 */}
