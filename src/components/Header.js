@@ -47,8 +47,8 @@ export default function Header() {
   }, [isMobile]);
 
   return (
-    <header className="bg-gray-300 text-white p-4">
-      <nav className="max-w-7xl mx-auto flex justify-between items-center">
+    <header className="text-brack p-4">
+      <nav className="max-w-7xl mx-auto flex justify-between items-center mr-[150px]">
         <div className="text-2xl font-semibold">
           <Link href="/" className="hover:text-blue-400 hover:bold">ホーム</Link>
         </div>
