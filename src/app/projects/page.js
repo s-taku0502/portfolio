@@ -10,7 +10,7 @@ import Header from "@/components/Header";
 */
 const projects = [
   {
-    title: "スタンプラリー（ウェブアプリ）/一般利用者用",
+    title: "スタンプラリー（ウェブアプリ）/ 一般利用者用",
     description: "金沢市額（ぬか）振興会の方との提携により制作したスタンプラリーです。",
     link: "https://kanazawa-nuka2024.web.app/",
     status: "公開中",
@@ -19,7 +19,7 @@ const projects = [
     imageUrl: "/images/summer-festival.png",
   },
   {
-    title: "スタンプラリー（ウェブアプリ）/管理者用",
+    title: "スタンプラリー（ウェブアプリ）/ 管理者用",
     description: "金沢市額（ぬか）振興会の方との提携により制作したスタンプラリーです。但し、管理者専用画面のため、一般利用者はアクセスできません。",
     link: "https://knzwnk-auth.web.app/",
     status: "公開停止中",
@@ -36,6 +36,24 @@ const projects = [
     update: "#",
     imageUrl: "/images/portfolio.png",
   },
+  {
+    title: "trim6",
+    description: "あらゆるURLを6文字に短縮するジェネレーター",
+    link: "https://trim6.onrender.com/",
+    status: "公開中",
+    start: "2025/02/26",
+    update: "2025/02/27",
+    imageUrl: "/images/trim6.png",
+  },
+  {
+    title: "personal_diaries",
+    description: "日々の出来事を記録するための日記アプリ",
+    link: "https://personal-diaries.onrender.com/",
+    status: "公開中",
+    start: "2025/02/27",
+    update: "#",
+    imageUrl: "/images/personal-diaries.png",
+  }
 ];
 
 export default function ProjectsPage() {
