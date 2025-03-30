@@ -13,6 +13,7 @@ const projects = [
     title: "スタンプラリー（ウェブアプリ）/ 一般利用者用",
     description: "金沢市額（ぬか）振興会の方との提携により制作したスタンプラリーです。",
     link: "https://kanazawa-nuka2024.web.app/",
+    link: "https://nuka-stamprally.vercel.app/",
     status: "公開中",
     start: "2024/08/20",
     update: "2025/02/15",
@@ -22,6 +23,7 @@ const projects = [
     title: "スタンプラリー（ウェブアプリ）/ 管理者用",
     description: "金沢市額（ぬか）振興会の方との提携により制作したスタンプラリーです。但し、管理者専用画面のため、一般利用者はアクセスできません。",
     link: "https://knzwnk-auth.web.app/",
+    link: "https://stamp-web-auth.vercel.app/",
     status: "公開停止中",
     start: "2025/01/20",
     update: "2025/02/15",
@@ -53,7 +55,34 @@ const projects = [
     start: "2025/02/27",
     update: "#",
     imageUrl: "/images/personal-diaries.png",
-  }
+  },
+  {
+    title: "日記共有アプリ",
+    description: "個人の日記を共有するためのアプリ。友達と一緒に日記をつけることができます。",
+    link: "#",
+    status: "制作中",
+    start: "2025/03/25",
+    update: "#",
+    imageUrl: "",
+  },
+  {
+    title: "行きたい場所マップ",
+    description: "インスタグラムの投稿を元に、行きたい場所をマップ上に表示するアプリ",
+    link: "#",
+    status: "制作中",
+    start: "2025/03/25",
+    update: "アプリ内で配信中",
+    imageUrl: "/images/insta-map.png",
+  },
+  {
+    title: "タスク管理サイト",
+    description: "タスクを管理するためのウェブアプリ。進捗共有機能を実装中です。",
+    link: "https://task-sharing-app.vercel.app/",
+    status: "公開中",
+    start: "2025/03/26",
+    update: "アプリ内で配信中",
+    imageUrl: "/images/task_sharing.png",
+  },
 ];
 
 export default function ProjectsPage() {
