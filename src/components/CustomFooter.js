@@ -2,7 +2,7 @@ import CustomLink from "./CustomLink";
 
 const CustomFooter = ({ children, className = "" }) => {
     return (
-        <footer className="font-playfair flex flex-col gap-4 row-start-3 items-center">
+        <footer className="font-playfair flex flex-col gap-4 row-start-3 items-center mb-4 mt-4 p-4 dark:text-white rounded-lg">
             <div className="flex">
                 <a className="font-playfair text-base md:text-[1.3vw] text-center">©2025 sudo</a>
             </div>
