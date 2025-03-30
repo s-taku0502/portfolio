@@ -35,7 +35,7 @@ const projects = [
     link: "#",
     status: "制作中",
     start: "2025/02/14",
-    update: "#",
+    update: "2025/03/31",
     imageUrl: "/images/portfolio.png",
   },
   {
