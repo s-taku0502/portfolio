@@ -18,7 +18,7 @@ const aboutData = {
     インフラ: ["Docker", "Vercel", "Cloudflare", "GitHub Pages"],
   },
   projects: {
-    description: "Check out my GitHub for some of my projects.",
+    description: "GitHubにて公開している制作物の一覧です。制作終了段階まではGitHubのリポジトリを非公開にしています。制作物は随時更新していきます。",
     link: "https://github.com/s-taku0502/"
   },
   socialMedia: [
@@ -89,7 +89,7 @@ export default function AboutPage() {
 
         {/* モットー・趣味 */}
         <ToggleSection title="モットー・趣味">
-          <p><strong>モットー:</strong> "{aboutData.motto}"</p>
+          <p><strong>モットー:</strong> {aboutData.motto}</p>
           <p><strong>趣味:</strong> {aboutData.hobbies.join(", ")}</p>
         </ToggleSection>
 
