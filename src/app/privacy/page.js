@@ -1,11 +1,12 @@
-import "../../styles/globals.css";
+"use client";
 import CustomH2 from "@/components/CustomH2";
 import Privacy_div from "@/components/Privacy";
 import CustomHeader from "@/components/Header";
 import CustomFooter from "@/components/CustomFooter";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const PrivacyPolicy = () => {
+    const router = useRouter();
     return (
         <>
             <CustomHeader />
@@ -47,8 +48,11 @@ const PrivacyPolicy = () => {
                         <CustomH2>セキュリティ対策</CustomH2>
                         <p className="text-lg">収集した情報は、適切な方法で管理し、不正アクセスや漏洩を防止するための対策を講じています。</p>
                     </Privacy_div>
-                    <button className="bottom-4 mt-4 bg-blue-500 text-white rounded-full p-3 shadow-lg hover:bg-blue-600 transition duration-300">
-                        <Link href="/">ホームへ戻る</Link>
+                    <button
+                        onClick={() => router.back()}
+                        className="bottom-4 mt-4 bg-blue-500 text-white rounded-full p-3 shadow-lg hover:bg-blue-600 transition duration-300"
+                    >
+                        前のページへ戻る
                     </button>
                 </div>
                 <CustomFooter />
