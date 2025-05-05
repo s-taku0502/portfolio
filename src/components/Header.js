@@ -50,6 +50,7 @@ export default function Header() {
           <Link href="/about" className="hover:text-blue-400">自己紹介</Link>
           <Link href="/projects" className="hover:text-blue-400">制作物一覧</Link>
           <Link href="/contact" className="hover:text-blue-400">お問い合わせ</Link>
+          <Link href="/blogs" className="hover:text-blue-400">外部記事一覧</Link>
         </div>
 
         {/* ハンバーガーメニュー（モバイル用） */}
