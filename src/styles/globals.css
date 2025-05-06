@@ -40,7 +40,7 @@ body {
 }
 
 .shape-top-right {
-  top: -150px;
+  top: -86px; /* 元が -150px → 150 - 64 = 86 */
   right: -150px;
 }
 
