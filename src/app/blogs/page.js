@@ -41,8 +41,8 @@ export default async function BlogPage() {
         <>
             <Header className="pb-6" />
             <div className="p-6 max-w-5xl mx-auto">
-                <h1 className="text-3xl font-bold mb-8">外部記事一覧</h1>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {/* <h1 className="text-3xl font-bold mb-8">外部記事一覧</h1> */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
                     {articles.map((article, i) => (
                         <a
                             key={i}
