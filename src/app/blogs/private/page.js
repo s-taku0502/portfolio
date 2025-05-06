@@ -14,7 +14,13 @@ export default function PrivatePage() {
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const keyword = process.env.NEXT_PUBLIC_PRIVATE_KEYWORD;
+    // 複数のキーワードを配列として取得
+    const validKeywords = [
+        process.env.NEXT_PUBLIC_PRIVATE_KEYWORD_1,
+        process.env.NEXT_PUBLIC_PRIVATE_KEYWORD_2,
+        process.env.NEXT_PUBLIC_PRIVATE_KEYWORD_3,
+        process.env.NEXT_PUBLIC_PRIVATE_KEYWORD_4
+    ].filter(Boolean); // undefinedや空の値を除外
 
     const fetchArticles = async () => {
         try {
@@ -43,7 +49,10 @@ export default function PrivatePage() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (input.trim().toLowerCase() === keyword) {
+        const inputLower = input.trim().toLowerCase();
+        
+        // いずれかのキーワードに一致するか確認
+        if (validKeywords.some(keyword => keyword?.toLowerCase() === inputLower)) {
             setVerified(true);
             setError('');
             await fetchArticles();
