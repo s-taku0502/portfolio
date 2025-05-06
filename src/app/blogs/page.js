@@ -38,42 +38,46 @@ export default async function BlogPage() {
     );
 
     return (
-        <>
-            <Header className="pb-6" />
-            <div className="p-6 max-w-5xl mx-auto">
-                {/* <h1 className="text-3xl font-bold mb-8">外部記事一覧</h1> */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-                    {articles.map((article, i) => (
-                        <a
-                            key={i}
-                            href={article.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block bg-white border border-gray-200 rounded-2xl shadow hover:shadow-md transition p-4"
-                        >
-                            <div className="text-sm text-gray-400 mb-1">
-                                {formatDate(article.date)}
-                            </div>
-                            <h2 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
-                                {article.title}
-                            </h2>
-                            <div className="flex items-center gap-2 mt-2">
-                                <img
-                                    src={`/icons/${article.source.toLowerCase()}.png`}
-                                    alt={article.source}
-                                    className="w-4 h-4"
-                                />
-                                <span
-                                    className={`text-xs px-2 py-1 rounded ${getBadgeColor(article.source)}`}
-                                >
-                                    {article.source}
-                                </span>
-                            </div>
+        <div>
+            <>
+                <Header className="pb-6" />
+                <div className="background-shape shape-top-right" />
+                <div className="background-shape shape-bottom-left" />
+                <div className="p-6 max-w-5xl mx-auto">
+                    {/* <h1 className="text-3xl font-bold mb-8">外部記事一覧</h1> */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+                        {articles.map((article, i) => (
+                            <a
+                                key={i}
+                                href={article.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="block bg-white border border-gray-200 rounded-2xl shadow hover:shadow-md transition p-4"
+                            >
+                                <div className="text-sm text-gray-400 mb-1">
+                                    {formatDate(article.date)}
+                                </div>
+                                <h2 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">
+                                    {article.title}
+                                </h2>
+                                <div className="flex items-center gap-2 mt-2">
+                                    <img
+                                        src={`/icons/${article.source.toLowerCase()}.png`}
+                                        alt={article.source}
+                                        className="w-4 h-4"
+                                    />
+                                    <span
+                                        className={`text-xs px-2 py-1 rounded ${getBadgeColor(article.source)}`}
+                                    >
+                                        {article.source}
+                                    </span>
+                                </div>
 
-                        </a>
-                    ))}
+                            </a>
+                        ))}
+                    </div>
                 </div>
-            </div>
-        </>
+            </>
+        </div>
     );
 }
