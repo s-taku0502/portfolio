@@ -8,6 +8,7 @@ import Header from "@/components/Header";
 "update": "更新日を指定します。制作中の場合は表示されません。",
 "imageUrl": "画像のURLを指定します。画像がない場合は表示されません。",
 */
+// 上が昔、下が最新
 const projects = [
   {
     title: "スタンプラリー（ウェブアプリ）/ 一般利用者用",
@@ -35,7 +36,7 @@ const projects = [
     link: "#",
     status: "制作中",
     start: "2025/02/14",
-    update: "2025/03/31",
+    update: "2025/10/7",
     imageUrl: "/images/portfolio.png",
   },
   {
@@ -82,6 +83,15 @@ const projects = [
     start: "2025/03/26",
     update: "アプリ内で配信中",
     imageUrl: "/images/task_sharing.png",
+  },
+  {
+    title: "CityRiskView",
+    description: "避難所の情報をすばやく確認することができるシステムです。",
+    link: "https://cityriskview.vercel.app",
+    status: "公開中",
+    start: "2025/04/27",
+    update: "#",
+    imageUrl: "/images/cityriskview.png",
   },
 ];
 
