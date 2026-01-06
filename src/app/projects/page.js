@@ -3,7 +3,7 @@ import "../../styles/globals.css";
 import Header from "@/components/Header";
 
 /*
-"/": "status=[公開中, 限定公開中, 公開停止中, 制作中]のいずれかを指定します。公開中の場合はリンクが有効になります。",
+"/": "status=[公開中, 限定公開中, 公開停止中, 制作中, GitHub公開中]のいずれかを指定します。公開中の場合はリンクが有効になります。",
 "start": "制作開始日を指定します。公開中の場合は表示されません。",
 "update": "更新日を指定します。制作中の場合は表示されません。",
 "imageUrl": "画像のURLを指定します。画像がない場合は表示されません。",
@@ -15,7 +15,7 @@ const projects = [
     description: "金沢市額（ぬか）振興会の方との提携により制作したスタンプラリーです。",
     link: "https://kanazawa-nuka2024.web.app/",
     link: "https://nuka-stamprally.vercel.app/",
-    status: "公開中",
+    status: "限定公開中",
     start: "2024/08/20",
     update: "2025/02/15",
     imageUrl: "/images/summer-festival.png",
@@ -36,7 +36,7 @@ const projects = [
     link: "#",
     status: "制作中",
     start: "2025/02/14",
-    update: "2025/10/7",
+    update: "2026/01/07",
     imageUrl: "/images/portfolio.png",
   },
   {
@@ -67,19 +67,19 @@ const projects = [
     imageUrl: "",
   },
   {
-    title: "行きたい場所マップ",
+    title: "spotstock（行きたい場所マップ）",
     description: "インスタグラムの投稿を元に、行きたい場所をマップ上に表示するアプリ",
-    link: "#",
+    link: "https://spotstock.vercel.app/",
     status: "制作中",
     start: "2025/03/25",
-    update: "アプリ内で配信中",
-    imageUrl: "/images/insta-map.png",
+    update: "2026/01/06",
+    imageUrl: "/images/spotstock.png",
   },
   {
     title: "タスク管理サイト",
     description: "タスクを管理するためのウェブアプリ。進捗共有機能を実装中です。",
     link: "https://task-sharing-app.vercel.app/",
-    status: "公開中",
+    status: "公開停止中",
     start: "2025/03/26",
     update: "アプリ内で配信中",
     imageUrl: "/images/task_sharing.png",
@@ -90,8 +90,53 @@ const projects = [
     link: "https://cityriskview.vercel.app",
     status: "公開中",
     start: "2025/04/27",
-    update: "#",
+    update: "2025/12/17",
     imageUrl: "/images/cityriskview.png",
+  },
+  {
+    title: "Markdownコンバータ",
+    description: "Markdown形式のテキストをPDFに変換するツールです。",
+    link: "https://github.com/s-taku0502/markdown_converter",
+    status: "GitHub公開中",
+    start: "2025/07/27",
+    update: "#",
+    imageUrl: "",
+  },
+  {
+    title: "過去問K.I.T.A.",
+    description: "学内ハッカソンで開発した、過去問共有サイトです。",
+    link: "https://hackit2025-cirkit.vercel.app/",
+    status: "限定公開中",
+    start: "2025/07/27",
+    update: "2025/08/04",
+    imageUrl: "/images/hackit2025.png",
+  },
+  {
+    title: "日程調整サイト",
+    description: "完全AI制作の、日程調整サイトです。調整さんの代替を目指しています。",
+    link: "https://schedule-adjustment.vercel.app/",
+    status: "公開停止中",
+    start: "2025/08/07",
+    update: "#",
+    imageUrl: "/images/schedule-adjustment.png",
+  },
+  {
+    title: "omiyappy（おみやっぴー）",
+    description: "ハッカソンで開発した、お土産提案サイトです。",
+    link: "https://omiyappy.vercel.app/",
+    status: "限定公開中",
+    start: "2025/08/07",
+    update: "#",
+    imageUrl: "/images/omiyappy.png",
+  },
+  {
+    title: "個人ブログ",
+    description: "技術的な内容や日常の出来事を綴る、SNSを兼ねた個人ブログです。",
+    link: "https://echogarden-production.up.railway.app/",
+    status: "公開中",
+    start: "2025/12/31",
+    update: "#",
+    imageUrl: "/images/personal-blog.png",
   },
 ];
 
@@ -126,7 +171,7 @@ export default function ProjectsPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`mt-4 inline-block px-4 py-2 text-white rounded transition ${
-                    project.status === "公開中"
+                    project.status === "公開中" || project.status === "制作中" || project.status === "GitHub公開中"
                       ? "bg-blue-500 hover:bg-blue-600"
                       : "bg-gray-500 cursor-not-allowed"
                   }`}
