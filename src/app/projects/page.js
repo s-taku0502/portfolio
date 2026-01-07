@@ -115,7 +115,7 @@ const projects = [
     title: "日程調整サイト",
     description: "完全AI制作の、日程調整サイトです。調整さんの代替を目指しています。",
     link: "https://schedule-adjustment.vercel.app/",
-    status: "公開停止中",
+    status: "公開中",
     start: "2025/08/07",
     update: "#",
     imageUrl: "/images/schedule-adjustment.png",
